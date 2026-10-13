@@ -1,6 +1,6 @@
 # Layerwise
 
-![Layerwise: recoating-defect monitor for L-PBF](docs/assets/banner.png)
+![Layerwise: recoating-defect monitor for L-PBF](docs/assets/hero.png)
 
 A metal 3D printer (laser powder bed fusion, L-PBF) spreads a new layer of powder every 20-50
 seconds and takes a photo of it. If the recoater blade leaves a streak or a bare patch, the next
