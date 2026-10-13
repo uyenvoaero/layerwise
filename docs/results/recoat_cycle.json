@@ -1,0 +1,20 @@
+{
+  "budget_fraction": 0.5,
+  "budget_s": 10.97474992275238,
+  "method": "median time between consecutive PB layers with layer index difference 1",
+  "per_build": {
+    "SI383820211201123521": {
+      "gaps_used": 999,
+      "median_gap_s": 23.40000009536743
+    },
+    "SI383820240226095904": {
+      "gaps_used": 270,
+      "median_gap_s": 48.40400004386902
+    },
+    "SI383820240318120348": {
+      "gaps_used": 1366,
+      "median_gap_s": 21.94949984550476
+    }
+  },
+  "shortest_median_s": 21.94949984550476
+}

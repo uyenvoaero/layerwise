@@ -1,0 +1,5 @@
+version: "1"
+dataset: aalto
+classes:
+  defects:    {phase_category: recoating_phase_anomaly, fine_class: null}
+  overheated: {phase_category: melting_phase_anomaly,   fine_class: null}

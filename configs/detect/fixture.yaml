@@ -1,0 +1,33 @@
+# Same settings as local.yaml, used by tests (MLflow off) (images downscaled 4x, so sizes are scaled too).
+ingest_profile: fixture
+tiling:
+  tile_size: 256
+  overlap: 64
+size_buckets:
+  small_max_area: 64
+  medium_max_area: 576
+models:
+  yolo:
+    candidates:
+      - {id: yolov8n-scratch-t256, weights: yolov8n.yaml, tile_size: 256}
+  frcnn:
+    pretrained: false
+    candidates:
+      - {id: frcnn-r50v2-t256, tile_size: 256}
+  contrast:
+    candidates:
+      - {id: contrast, tile_size: 256}
+    background_blur: 21
+    min_area: 6
+train:
+  max_epochs: 1
+  patience: 1
+  batch_size: 8
+  workers: 0
+  amp: false
+latency:
+  target_hardware: cpu
+  warmup: 1
+  runs: 3
+tracking:
+  mlflow: false

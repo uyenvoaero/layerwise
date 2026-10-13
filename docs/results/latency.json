@@ -1,0 +1,74 @@
+[
+  {
+    "batch_size": 1,
+    "budget_ms": 10974.74992275238,
+    "device_name": "x86_64",
+    "eligible_default": true,
+    "excludes": [
+      "jpeg_decode"
+    ],
+    "hardware": "cpu",
+    "input_resolution": [
+      1280,
+      1024
+    ],
+    "model": "contrast",
+    "p50_ms": 100.17974400398089,
+    "p95_ms": 100.85466514647123,
+    "precision": "fp32",
+    "runs": 20,
+    "runtime": "opencv",
+    "tile_batch_size": 1,
+    "tile_size": 640,
+    "warmup": 3,
+    "within_budget": true
+  },
+  {
+    "batch_size": 1,
+    "budget_ms": 10974.74992275238,
+    "device_name": "NVIDIA L4",
+    "eligible_default": true,
+    "excludes": [
+      "jpeg_decode"
+    ],
+    "hardware": "cuda",
+    "input_resolution": [
+      1280,
+      1024
+    ],
+    "model": "frcnn",
+    "p50_ms": 137.36622950818855,
+    "p95_ms": 146.7620791583613,
+    "precision": "fp16",
+    "runs": 20,
+    "runtime": "pytorch",
+    "tile_batch_size": 16,
+    "tile_size": 640,
+    "warmup": 3,
+    "within_budget": true
+  },
+  {
+    "batch_size": 1,
+    "budget_ms": 10974.74992275238,
+    "device_name": "NVIDIA L4",
+    "eligible_default": true,
+    "excludes": [
+      "jpeg_decode"
+    ],
+    "hardware": "cuda",
+    "input_resolution": [
+      1280,
+      1024
+    ],
+    "model": "yolo",
+    "p50_ms": 32.30458249890944,
+    "p95_ms": 61.26761029299815,
+    "precision": "fp16",
+    "runs": 20,
+    "runtime": "pytorch",
+    "tile_batch_size": 16,
+    "tile_size": 640,
+    "warmup": 3,
+    "within_budget": true
+  }
+]

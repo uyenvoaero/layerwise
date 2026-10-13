@@ -1,0 +1,35 @@
+<annotation>
+  <filename>SI383820240318120348_00157_20240318T133518.372000.jpg</filename>
+  <size>
+    <width>320</width>
+    <height>256</height>
+    <depth>1</depth>
+  </size>
+  <object>
+    <name>defects</name>
+    <bndbox>
+      <xmin>176</xmin>
+      <ymin>134</ymin>
+      <xmax>180</xmax>
+      <ymax>138</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>defects</name>
+    <bndbox>
+      <xmin>216</xmin>
+      <ymin>93</ymin>
+      <xmax>220</xmax>
+      <ymax>97</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>defects</name>
+    <bndbox>
+      <xmin>138</xmin>
+      <ymin>160</ymin>
+      <xmax>143</xmax>
+      <ymax>166</ymax>
+    </bndbox>
+  </object>
+</annotation>

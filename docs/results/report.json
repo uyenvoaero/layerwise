@@ -1,0 +1,61 @@
+{
+  "builds_without_labeled_boxes": [],
+  "default_model": "yolo",
+  "default_model_reason": null,
+  "folds_finished": {
+    "contrast": [
+      0,
+      1,
+      2
+    ],
+    "frcnn": [
+      0,
+      1,
+      2
+    ],
+    "yolo": [
+      0,
+      1,
+      2
+    ]
+  },
+  "inner_validation_flags": {
+    "0": {
+      "0": "ok",
+      "1": "unreliable"
+    },
+    "1": {
+      "0": "ok",
+      "1": "ok"
+    },
+    "2": {
+      "0": "unreliable",
+      "1": "ok"
+    }
+  },
+  "label_source": "aalto_manual_pb_boxes",
+  "models": [
+    "contrast",
+    "frcnn",
+    "yolo"
+  ],
+  "partial": false,
+  "reproduction": {
+    "yolo": {
+      "0": {
+        "map50_original": 0.15838717933448151,
+        "map50_rerun": 0.15838717933448151,
+        "max_abs_diff": 0.0,
+        "recall_original": 0.12237762237762238,
+        "recall_rerun": 0.12237762237762238,
+        "reproduced": true,
+        "tolerance": 0.02
+      }
+    }
+  },
+  "size_flagged_images": {
+    "SI383820211201123521": 0,
+    "SI383820240226095904": 0,
+    "SI383820240318120348": 0
+  }
+}

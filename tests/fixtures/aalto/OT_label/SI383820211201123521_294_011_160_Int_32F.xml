@@ -1,0 +1,17 @@
+<annotation>
+  <filename>SI383820211201123521_294_011_160_Int_32F.jpg</filename>
+  <size>
+    <width>320</width>
+    <height>320</height>
+    <depth>1</depth>
+  </size>
+  <object>
+    <name>overheated</name>
+    <bndbox>
+      <xmin>256</xmin>
+      <ymin>194</ymin>
+      <xmax>260</xmax>
+      <ymax>197</ymax>
+    </bndbox>
+  </object>
+</annotation>

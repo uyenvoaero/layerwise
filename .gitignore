@@ -1,0 +1,23 @@
+# Data and outputs (live under DATA_ROOT, never in repo)
+data/
+dataset/
+artifacts/
+mlruns/
+*.parquet
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Env
+.env

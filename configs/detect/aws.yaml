@@ -1,0 +1,13 @@
+# Full data on an EC2 g6.xlarge (L4, CUDA). S3_URI comes from the environment (Makefile only).
+ingest_profile: aws
+models:
+  yolo:
+    candidates:
+      - {id: yolov8n-t640, weights: yolov8n.pt, tile_size: 640}
+      - {id: yolov8n-t1024, weights: yolov8n.pt, tile_size: 1024}
+      - {id: yolov8s-t640, weights: yolov8s.pt, tile_size: 640}
+      - {id: yolov8s-t1024, weights: yolov8s.pt, tile_size: 1024}
+train:
+  amp: true
+  device: cuda
+  workers: 8

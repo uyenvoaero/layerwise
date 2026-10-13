@@ -1,0 +1,25 @@
+dataset: aalto
+# Paths below are relative to DATA_ROOT unless noted.
+source_dir: aalto/Original Images and manual labels
+processed_dir: processed/aalto
+# Relative to the repository root.
+class_mapping: configs/class_mapping/aalto.yaml
+fixture_dir: tests/fixtures/aalto
+known_builds:
+  - SI383820211201123521
+  - SI383820240226095904
+  - SI383820240318120348
+# [width, height] in pixels
+expected_size:
+  PB: [1280, 1024]
+  OT: [2000, 2000]
+subset:
+  builds: all
+  modalities: [PB, OT]
+  max_layers_per_build: null
+tracking:
+  mlflow: true
+  dir: mlruns
+# Maximum fraction of unreadable or corrupt files before the run exits with code 4.
+failure_threshold: 0.05
+seed: null

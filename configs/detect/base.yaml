@@ -1,0 +1,69 @@
+# Paths below are relative to DATA_ROOT unless noted.
+# Relative to the repository root; the ingest profile below names the profile file next to it.
+ingest_config: configs/ingest/base.yaml
+ingest_profile: aws
+runs_dir: runs/detect
+staging_dir: staging
+predictions_dir: predictions
+reports_dir: reports/detect
+weights_dir: weights
+seed: 0
+tiling:
+  tile_size: 640
+  overlap: 160
+  # A training box is kept when at least this fraction of its area lies inside the tile.
+  min_box_visible: 0.6
+  # Negative (box-free) training tiles per positive tile.
+  negative_tile_ratio: 0.25
+  nms_iou: 0.5
+matching:
+  iou: 0.5
+# Box area in px^2: small < small_max_area <= medium < medium_max_area <= large.
+size_buckets:
+  small_max_area: 1024
+  medium_max_area: 9216
+# Predictions below this confidence are not stored in heldout_detections.parquet.
+eval_min_confidence: 0.001
+# Absolute tolerance for the reproduction check and for "equal" verdicts.
+repro_tolerance: 0.02
+min_validation_images: 150
+models:
+  yolo:
+    # At most 4 candidates. `weights` is a file name in weights_dir or an Ultralytics model name.
+    candidates:
+      - {id: yolov8n-t640, weights: yolov8n.pt, tile_size: 640}
+      - {id: yolov8n-t1024, weights: yolov8n.pt, tile_size: 1024}
+      - {id: yolov8s-t640, weights: yolov8s.pt, tile_size: 640}
+      - {id: yolov8s-t1024, weights: yolov8s.pt, tile_size: 1024}
+  frcnn:
+    candidates:
+      - {id: frcnn-r50v2-t640, tile_size: 640}
+    # COCO-pretrained detector and backbone (downloaded once); false builds it from scratch.
+    pretrained: true
+    learning_rate: 0.0001
+    weight_decay: 0.0001
+  contrast:
+    candidates:
+      - {id: contrast, tile_size: 640}
+    # Non-learned; only the confidence threshold is chosen on the inner folds.
+    background_blur: 51
+    threshold_multiple: 3.0
+    min_area: 100
+    opening_size: 3
+    confidence_saturation: 8.0
+train:
+  max_epochs: 100
+  patience: 20
+  batch_size: 16
+  workers: 4
+  amp: false
+  device: auto
+latency:
+  budget_fraction: 0.5
+  # Hardware whose latency record decides which model may become the default.
+  target_hardware: cuda
+  warmup: 3
+  runs: 20
+tracking:
+  mlflow: true
+  dir: mlruns
