@@ -114,12 +114,21 @@ The budget is half of the shortest median gap between consecutive powder bed pho
 Measured on an AWS `g6.xlarge` (NVIDIA L4), FP16, 16 tiles per batch, 3 warm-up and 20 timed runs,
 JPEG decode excluded. No edge device has been tested.
 
-### Example detections
+### Example detections, zoomed in
+
+![Zoomed detections](docs/assets/defect_zoom.jpg)
+
+Each pair shows the raw crop and the same crop with boxes drawn just outside the region, so the
+defect stays visible. All crops come from builds held out of training. The last row shows two false
+alarms; the left one looks similar to labeled cases and may be a missing label, which is one reason
+precision is hard to read on this data.
+
+<details>
+<summary>Full-layer view of four held-out photos</summary>
 
 ![Evidence grid](docs/assets/evidence_grid.jpg)
 
-All four photos come from builds held out of training, including one false alarm and one partial
-match.
+</details>
 
 ### Limits
 
